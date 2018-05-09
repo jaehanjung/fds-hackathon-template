@@ -18,13 +18,23 @@ class TicTacToe {
   }
   // 누가 이겼는지 판별
   checkWinner(){
+
     for(let i = 0; i< 3; i++){
       if( this.board[i][0] !== null &&
           this.board[i][0] === this.board[i][1] &&
-          this.board[i][1] === this.board[i][2])
-         {
-          return this.board[i][0];
-      }
+          this.board[i][1] === this.board[i][2]
+           ){
+            return this.board[i][0];
+           }
+           else if( this.board[0][i] !== null &&
+            this.board[0][i] === this.board[1][i] &&
+            this.board[1][i] === this.board[2][i]){
+          return this.board[2][i];
+          } else if(this.board[i][0] !== null &&
+            this.board[0][0] === this.board[1][1] &&
+            this.board[1][1] === this.board[2][2]){
+          return this.board[i][1]
+          }
     }
   }
 }
